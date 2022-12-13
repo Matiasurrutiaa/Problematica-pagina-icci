@@ -6,7 +6,7 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Here is first srver")
+		c.String(200, "este es el server")
 	})
 	r.Run()
 
