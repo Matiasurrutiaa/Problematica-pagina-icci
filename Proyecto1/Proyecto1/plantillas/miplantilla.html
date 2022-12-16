@@ -1,0 +1,14 @@
+<html>
+    <body>
+        {% include "superior/barra.html" %} 
+
+
+
+    <h1 style="color: royalblue;">
+    hola mundo primera plantilla !!!
+    </h1>
+    <p>El nombre es: <strong>{{nombre_persona|upper}}</strong>  </p>
+    <p>El apellido es: <strong>{{apellido_persona|upper}}</strong> </p>
+    <p>Estamos a dia: {{momento_actual.day}}/{{momento_actual.month}}/{{momento_actual.year}} </p>
+</body>
+    </html>

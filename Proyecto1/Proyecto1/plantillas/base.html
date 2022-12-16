@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>
+            {% block title %} {% endblock%}
+        </title>
+    </head>
+
+    <body>
+        <h1 style="background-color: royalblue; color: white; text-align:center">Fundamentos lenguaje de programacion</h1>
+        
+        {% include "superior/barra.html" %}
+         
+        <h3>sistema web icci</h3>
+
+        {% block content %}
+
+        {% endblock %}
+
+        <p style="background-color: royalblue; color: white; text-align:center"> holaaaaaaaaa</p>
+
+
+    </body >
+
+</html>
