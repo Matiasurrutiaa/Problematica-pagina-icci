@@ -5,6 +5,7 @@ class Users(models.Model):
     name=models.CharField(max_length=50)
     last_name=models.CharField(max_length=50)
     rut=models.IntegerField()
+    dv=models.CharField(max_length=1)
     mail=models.EmailField()
     password=models.CharField(max_length=10)
     delete_at=models.BooleanField()
