@@ -1,0 +1,46 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+
+    
+    <div class="container">
+        <a  href="{% url 'aplication:create' %}"  class="btn btn-outline-light mt-5">Crear Nuevo</a>
+
+        <table  class="table table-bordered table-info mt-5 text-center">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Descripción</th>
+            <th>Autor</th>
+            <th>Fecha de publicación</th>
+            <th>Url</th>
+            <th></th>    
+            </tr>
+        </thead>
+        <tbody>
+            {% for Documents in documentos %}
+                <tr>
+                    <th> {{ Documents.id }}</th>
+                    <td> {{ Documents.title }}</td>
+                    <td> {{ Documents.description }}</td>
+                    <td> {{ Documents.author }}</td>
+                    <td> {{ Documents.publication_date }}</td>
+                    <td> {{ Documents.url }}</td>
+                    <td>
+                        <a href="{% url 'aplication:detail' Documents.id %}" class="btn btn-danger m-1">Ver mas</a>
+                        <a class="btn btn-success m-1">Editar</a>
+                        <a class="btn btn-primary m-1">Eliminar</a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+    </div>
+
+
+
+
+    
+    
