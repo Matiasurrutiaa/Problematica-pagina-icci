@@ -10,7 +10,7 @@ class UsersAdmin(admin.ModelAdmin):
     search_fields=("name", "last_name","rut","mail")
 
 class UsersDocument(admin.ModelAdmin):
-    list_display=("url","description","title","author","publication_date")
+    list_display=("title","author","description","publication_date","url")
     search_fields=("url","description","title","author","publication_date")
 
 

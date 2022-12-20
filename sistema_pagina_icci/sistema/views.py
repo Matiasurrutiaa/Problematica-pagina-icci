@@ -25,7 +25,7 @@ def create_documents(request):
         document_form = DocumentForm(request.POST)
         if document_form.is_valid():
             document_form.save()
-            return redirect("aplication:subir_Archivo")
+            return redirect("aplication:subir_archivos")
     else:
         document_form=DocumentForm()
     return render(request, "sistema/create.html", {'document_form':document_form})       
