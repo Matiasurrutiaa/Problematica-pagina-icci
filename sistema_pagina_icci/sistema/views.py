@@ -28,4 +28,23 @@ def create_documents(request):
             return redirect("aplication:subir_archivos")
     else:
         document_form=DocumentForm()
-    return render(request, "sistema/create.html", {'document_form':document_form})       
+    return render(request, "sistema/create.html", {'document_form':document_form})
+
+
+def update_documents(request, id):
+    document = get_object_or_404(Documents, id = id)
+    if request.method == "POST":
+       document_form=document_form(request.POST, instance= document)
+       if document_form.is_valid():
+            document_form.save() 
+            return redirect("aplication:subir_archivos")
+    else:
+        document_form=DocumentForm()
+        return render(request, "sistema/editar.html", {'document_form':document_form})
+
+def delete_documents(request, id):
+    document = get_object_or_404(Documents, id = id)
+
+    if document:
+        document.delete()
+        return redirect("aplication:subir_archivos")
