@@ -1,11 +1,30 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+
 <div class="container">
-    <br>
-    <p>{{ detail_documents.id }}</p>
-    <p>{{ detail_documents.title }}</p>
-    <p>{{ detail_documents.description }}</p>
-    <p>{{ detail_documents.publication_date }}</p>
-    <p>{{ detail_documents.url }}</p>
+    <table  class="table table-bordered table-info mt-5 text-center">
+        <thead> 
+            <tr>
+            
+            
+            <th>URL</th>
+            
+                
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td ><a style="color: white;" href="{{ detail_documents.url }}" >{{ detail_documents.url }} </a></td>
+                
+                
+                
+                   
+            </tr>
+            
+        </tbody>
+        
+    
 </div>
 

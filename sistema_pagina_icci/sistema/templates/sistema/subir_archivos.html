@@ -1,10 +1,38 @@
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">    
+    <br>
+    <br>
+    <br>
+    <br>
+    
     <div class="container">
-        <a  href="{% url 'aplication:create' %}"  class="btn btn-outline-light mt-5">Crear Nuevo</a>
+        <div class="row">
+            <div class="col-md-12 search">
+                <form method="get">
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+                            <span class="input-group-list">
+                                <i class="icon icon-search"></i>
+                                <button type="submit" class="boton btn-success"> Buscar</button>
 
+                            </span>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container">
+        
+        
         <table  class="table table-bordered table-info mt-5 text-center">
+            
         <thead>
             <tr>
             
@@ -12,9 +40,11 @@
             <th>Descripción</th>
             <th>Autor</th>
             <th>Fecha de publicación</th>
+            <th>Detalles</th>
             
-            <th></th>    
+                
             </tr>
+            
         </thead>
         <tbody>
             {% for Documents in documentos %}
@@ -25,16 +55,19 @@
                     <td> {{ Documents.author }}</td>
                     <td> {{ Documents.publication_date }}</td>
                     
-                    <td>
-                        <a href="{% url 'aplication:detail' Documents.id %}" class="btn btn-danger m-1">Ver mas</a>
-                        <a href="{% url 'aplication:update' Documents.id %}" class="btn btn-success m-1">Editar</a>
-                        <a href="{% url 'aplication:delete' Documents.id %}" class="btn btn-primary m-1">Eliminar</a>
+                     <td>
+                        <a href="{% url 'aplication:detail' Documents.id %}" class="btn btn-danger m-1">Ver URL</a> 
+                        <!--<a href="{% url 'aplication:update' Documents.id %}" class="btn btn-success m-1">Editar</a>
+                        <a href="{% url 'aplication:delete' Documents.id %}" class="btn btn-primary m-1">Eliminar</a> -->
 
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
         </table>
+
+        <a  href="{% url 'aplication:create' %}"  class="btn btn-primary mt-5">Crear Nuevo</a>
+
 
     </div>
 

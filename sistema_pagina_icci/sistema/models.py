@@ -1,17 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Users(models.Model):
-    name=models.CharField(max_length=50 ,verbose_name="Nombre")
-    last_name=models.CharField(max_length=50, verbose_name="Apellido")
-    rut=models.IntegerField()
-    dv=models.CharField(max_length=1, verbose_name="Digito Verificador")
-    mail=models.EmailField(verbose_name="Correo")
-    password=models.CharField(max_length=10, verbose_name="Contraseña")
-    delete_at=models.BooleanField(verbose_name="inactivo")
 
-    def __str__(self):
-         return self.name
 
 class Documents(models.Model):
      url=models.URLField()

@@ -1,13 +1,18 @@
 
 {% load static %}
+
+{}
+
 <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
 <h1><strong> Ingresa aqui los datos solicitados: </strong></h1>
 <br>
-<form method="POST">
+<form method="POST" action="">
     {% csrf_token %}
 
-    {{ document_form.as_p}}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn_btn-succes"> Registrar</button>
 
 
-    <button type="submit">Subir</button>
+    
 </form>

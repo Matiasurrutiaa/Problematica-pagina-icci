@@ -1,16 +1,26 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse
-from .models import Users, Documents
-from .forms import DocumentForm 
+from .models import  Documents
+from .forms import DocumentForm
+from django.db.models import Q 
 
 # Create your views here.
 
 def subir_archivos(request):
+    queryset= request.GET.get("buscar")
     documentos = Documents.objects.all()
     context= {
         'documentos' : documentos
     }
+    if queryset:
+        documentos=Documents.objects.filter(
+            Q(title__icontains = queryset) |
+            Q(author__icontains = queryset)    
+        ).distinct()
+
+    
+   
     return render(request, 'sistema/subir_archivos.html', context)
 
 def detail(request, id):
