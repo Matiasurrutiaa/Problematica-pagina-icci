@@ -1,11 +1,66 @@
 
 {% load static %}
-<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">    
-    <br>
-    <br>
-    <br>
-    <br>
+
+
+
+
+
+<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <h1 style="text-align: center;"> SUBE TUS DOCUMENTOS</h1>
     
+    <div style="text-align: right; margin-right: 100px;">
+        {% if user.is_authenticated %}
+
+        Hola , {{user.username}} &nbsp; &nbsp; <a style="color: black;" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a>
+
+        {% else %}
+
+        <a href="{% url 'login' %}">LOGIN</a>
+
+        {% endif %}
+    </div>
+
+    <nav style="background-color: #03a9f4;" class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainvav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="create">Documentos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div  class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="">Inicio</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="">Inicio</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="">Inicio</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="">Inicio</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="">Inicio</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <br>
+    </br>
+ 
     <div class="container">
         <div class="row">
             <div class="col-md-12 search">
